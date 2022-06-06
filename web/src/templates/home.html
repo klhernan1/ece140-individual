@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Page Info -->
-    <title>Agile Demo</title>
-    <meta name="author" content="Ramsin Khoshabeh">
-    <meta name="description" content="A Place to Call Home">
+    <title>Individual Website homepage</title>
+    <meta name="author" content="Karen Hernandez">
+    <meta name="description" content="Individual Website ECE 140B">
 
     <link rel="stylesheet" type="text/css" href="css/agile.css">
   </head>
@@ -17,13 +17,57 @@
   <body>
 
     <div class='hero'>
-      <h1> Agile CSS Micro-Framework </h1>
-      <p> Experimental design for ECE140b </p>
+      <h1> Banglet with Karen Hernandez </h1>
+      <h3> "For a better VIP experience"  </h3>
+      <p> A website designed to introduce, describe and experiment with our group project for ECE 140B  </p>
     </div>
 
     <section class='padding-responsive'>
+      <h2>Database Records</h2>
 
-      <div class='separator'>Database Records</div>
+      <div class='separator'> Instructors </div>
+
+      <table class='margin-top-xl'>
+        <thead>
+          <tr>
+            <th class='small'> First Name </th>
+            <th class='medium'> Last Name </th>
+            <th class='large'> Email </th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for user in users %}
+          <tr>
+            <td> {{user[0]}} </td>
+            <td> {{user[1]}} </td>
+            <td> {{user[2]}} </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <div class='separator'> Teacher Assistants </div>
+
+      <table class='margin-top-xl'>
+        <thead>
+          <tr>
+            <th class='small'> First Name </th>
+            <th class='medium'> Last Name </th>
+            <th class='large'> Email </th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for user in users %}
+          <tr>
+            <td> {{user[0]}} </td>
+            <td> {{user[1]}} </td>
+            <td> {{user[2]}} </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <div class='separator'> Group Project Members </div>
 
       <table class='margin-top-xl'>
         <thead>

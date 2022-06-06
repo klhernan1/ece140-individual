@@ -1,6 +1,7 @@
 from wsgiref.simple_server import make_server
 from pyramid.config import Configurator
 from pyramid.renderers import render_to_response
+from pyramid.response import FileResponse
 
 import mysql.connector as mysql
 import os
@@ -20,6 +21,19 @@ def get_home(req):
 
   return render_to_response('templates/home.html', {'users': records}, request=req)
 
+
+
+def get_product(req):
+      
+    return FileResponse("templates/product.html")
+
+
+def get_kvp(req):
+      
+    return FileResponse("templates/kvp.html")
+
+
+
 ''' Route Configurations '''
 if __name__ == '__main__':
   config = Configurator()
@@ -29,6 +43,12 @@ if __name__ == '__main__':
 
   config.add_route('get_home', '/')
   config.add_view(get_home, route_name='get_home')
+
+  config.add_route('get_product', '/get_product')
+  config.add_view(get_product, route_name='get_product')
+
+  config.add_route('get_kvp', '/get_kvp')
+  config.add_view(get_kvp, route_name='get_kvp')
 
   config.add_static_view(name='/', path='./public', cache_max_age=3600)
 
