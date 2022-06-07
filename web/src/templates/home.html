@@ -23,12 +23,45 @@
     </div>
 
     <section class='padding-responsive'>
-      <h2> More information ... </h2>
+      <div class='separator'> The Art of Product Engineering </div>
+
+      <p><em>This website designed by myself, Karen Hernandez, a finishing undergraduate student at UCSD majoring in Electrical Engineering with emphasis in machine learning and data science.</em></p>
+      <br><br>
+      <hr>
+      <h3>   Motivation</h3>
+      <p>The goal of this space is to demonstrate my experience writting full-stack explore some projects that I have contributed to. </p>
+      <br>
+      <p>The Art of product engineering is a two-term course offered at UCSD, naimly as ECE 140A and ECE 140B. The goal is to build on a solid foundation of electrical and computer engineer skills, this course strives to broaden student skills in software, full-stack engineering, and concrete understanding of methods related to the realistic development of a commercial product. Students will research, design, and develop an IOT device to serve an emerging market. </p>
+      <br><hr>
+      <h3>   Website Architecture </h3>
+      <br>
+      <p>The architectural design of my choice when creating the website (such as server, database, css-style, etc.) is as follows.</p>
+      <h4> Server</h4>
+      <ul>
+        <li>Digital Ocean as a cloud-service for our website server development</li>
+        <li>Created a Docker image to launch the server container, in order to be able to launch the website with all the necesary requirements on any operating system. </li>
+        <li></li>
+      </ul>
+      <h4>Data</h4>
+      <ul>
+        <li>Using MySQL to create, update and store data containing information about to the Banglet Project.</li>
+      </ul>
+
+      <h4>Styling</h4>
+      <ul>
+        <li>The styling desing for the html files was done using css.</li>
+      </ul>
+
+      <br><hr>
+      <h3>   Product Introduction </h3>
+      <p>Our product and services offer tools for event managers to monitor and track VIP customers and their transactions in the venue. For the VIP’s we offer a bracelet for VIP users that eases the transaction process between them and the vendors, as well as identification process. </p>
+      
+      <!-- <h2> More information ... </h2>
       <p style="font-size:medium;"> <a href="product.html" style="color:#7fa8ff; font-size: medium;">  Product </a> </p>
 
       <p style="font-size:medium;"> <a href="kvp.html" style="color:#7fa8ff; font-size: medium;">  KVP </a> </p>
-	
-      <h2>Database Records</h2>
+	 -->
+      <h2>Collaborators</h2>
 
       <div class='separator'> Instructors </div>
 
@@ -41,7 +74,7 @@
           </tr>
         </thead>
         <tbody>
-          {% for user in users %}
+          {% for user in users1 %}
           <tr>
             <td> {{user[0]}} </td>
             <td> {{user[1]}} </td>
@@ -62,7 +95,7 @@
           </tr>
         </thead>
         <tbody>
-          {% for user in users %}
+          {% for user in users2 %}
           <tr>
             <td> {{user[0]}} </td>
             <td> {{user[1]}} </td>
@@ -83,7 +116,7 @@
           </tr>
         </thead>
         <tbody>
-          {% for user in users %}
+          {% for user in users3 %}
           <tr>
             <td> {{user[0]}} </td>
             <td> {{user[1]}} </td>
@@ -92,10 +125,10 @@
           {% endfor %}
         </tbody>
       </table>
-
+<!-- 
       <div class='separator'>Typography</div>
 
-      <h1 class='bordered'> H1 Element </h1>
+      <h1 class='bordered'>  </h1>
       <h2 class=''> H2 Element </h2>
       <h3 class=''> H3 Element </h3>
       <h4 class=''> H4 Element </h4>
@@ -211,11 +244,11 @@
             <label class="control control--radio">Second radio
               <input type="radio" name="radio" />
               <div class="control__indicator"></div>
-            </label>
-          </div>
+            </label> -->
+          <!-- </div>
         </section>
 
-      </form>
+      </form> -->
 
     </section>
 

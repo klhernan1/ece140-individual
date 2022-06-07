@@ -11,17 +11,36 @@ db_pass = os.environ['MYSQL_PASSWORD']
 db_name = os.environ['MYSQL_DATABASE']
 db_host = os.environ['MYSQL_HOST']
 
+# def get_home(req):
+#   # Connect to the database and retrieve the users
+#   db = mysql.connect(host=db_host, database=db_name, user=db_user, passwd=db_pass)
+#   cursor = db.cursor()
+#   cursor.execute("select first_name, last_name, email from Users;")
+#   records = cursor.fetchall()
+#   db.close()
+
+#   return render_to_response('templates/home.html', {'users': records}, request=req)
+
 def get_home(req):
-  # Connect to the database and retrieve the users
+      # Connect to the database and retrieve the users
   db = mysql.connect(host=db_host, database=db_name, user=db_user, passwd=db_pass)
   cursor = db.cursor()
-  cursor.execute("select first_name, last_name, email from Users;")
-  records = cursor.fetchall()
+
+  inst_sql = "SELECT first_name, last_name, email from Users WHERE user_role = 'instructor';"
+  ta_sql = "SELECT first_name, last_name, email from Users WHERE user_role = 'teacher assistant';"
+  team_sql = "SELECT first_name, last_name, email from Users WHERE user_role = 'team member';"
+  cursor.execute(inst_sql)
+  instructors = cursor.fetchall()
+
+  cursor.execute(ta_sql)
+  tas = cursor.fetchall()
+
+  cursor.execute(team_sql)
+  team = cursor.fetchall()
   db.close()
 
-  return render_to_response('templates/home.html', {'users': records}, request=req)
-
-
+  return render_to_response('templates/home.html', {'users1': instructors}, {'users2': tas}, 
+                            {'users3': team}, request=req)
 
 def get_product(req):
       
@@ -44,11 +63,11 @@ if __name__ == '__main__':
   config.add_route('get_home', '/')
   config.add_view(get_home, route_name='get_home')
 
-  config.add_route('get_product', '/get_product')
-  config.add_view(get_product, route_name='get_product')
+  # config.add_route('get_product', '/product')
+  # config.add_view(get_product, route_name='get_product')
 
-  config.add_route('get_kvp', '/get_kvp')
-  config.add_view(get_kvp, route_name='get_kvp')
+  # config.add_route('get_kvp', '/kvp')                 
+  # config.add_view(get_kvp, route_name='get_kvp')
 
   config.add_static_view(name='/', path='./public', cache_max_age=3600)
 
